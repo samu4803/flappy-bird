@@ -15,7 +15,7 @@ public:
     {
         render = renderer;
     }
-    bool ai(SDL_Event e, bool quit);
+    int ai(SDL_Event e, int quit);
     int y2;
 
 private:
@@ -24,14 +24,12 @@ private:
     int pole_passed = 0;
 };
 
-bool birdAI::ai(SDL_Event event, bool quit)
+int birdAI::ai(SDL_Event event, int quit)
 {
-
     Displays d(render);
     SDL_Rect bird_source;
     SDL_Rect bird_destination;
     SDL_Texture *bird = IMG_LoadTexture(render, "src\\res\\sprite_sheet.png");
-
     std::vector<opsgenerate> poles(4, opsgenerate(render));
     opstacle op(render);
     int i = 0, j = 0;
@@ -40,30 +38,25 @@ bool birdAI::ai(SDL_Event event, bool quit)
     int size = 30;
     int x = 357;
     int y = 357;
-
     int move = 0;
     int next_frame = 0;
-    while (!quit)
+    while (quit == 0)
     {
-
         if (move >= 51)
             move = 0;
         SDL_Delay(15);
         d.clear(render);
         bird_source = d.get_rect(move, 0, 12, 17);
         bird_destination = d.get_rect(x, y, 30, 30);
-
         if (begin == 0)
         {
             for (int count = 0; count < 4; count++)
             {
-
                 poles[count].create(begin++);
                 poles[count].x = 725 + pass;
                 pass = pass + 250;
             }
         }
-
         if (j > 2)
         {
             j = 0;
@@ -74,7 +67,6 @@ bool birdAI::ai(SDL_Event event, bool quit)
         y = y + 1 + i;
         if (SDL_PollEvent(&event))
         {
-
             switch (event.type)
             {
             case SDL_KEYDOWN:
@@ -86,19 +78,19 @@ bool birdAI::ai(SDL_Event event, bool quit)
                     }
                 break;
             case SDL_QUIT:
-                quit = true;
+                quit = 1;
                 break;
             }
         }
-        if (y >= 700)
+        if (y >= 750)
         {
             d.Display(render, bird, bird_source, bird_destination);
-            quit = true;
+            quit = 3;
+            break;
         }
         else if (y <= 0)
         {
             d.Display(render, bird, bird_source, bird_destination);
-
             y = 0;
         }
         else
@@ -106,7 +98,10 @@ bool birdAI::ai(SDL_Event event, bool quit)
         for (int count = 0; count < 4; count++)
             if (poles[count].x <= 387 && poles[count].x >= 327)
                 if (poles[count].randomnum >= y || poles[count].randomnum + poles[count].gap - 40 <= y)
-                    quit = true;
+                {
+                    quit = 3;
+                    break;
+                }
         for (int count = 0; count < 4; count++)
         {
 
@@ -120,10 +115,13 @@ bool birdAI::ai(SDL_Event event, bool quit)
         }
         d.update(render);
         if (next_frame == 12)
-            {next_frame=0;
-                move = move + 17;}
-                else
-                next_frame++;
+        {
+            next_frame = 0;
+            move = move + 17;
+        }
+        else
+            next_frame++;
     }
+
     return quit;
 }

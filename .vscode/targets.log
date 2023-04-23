@@ -6,12 +6,10 @@ make.exe all --print-data-base --no-builtin-variables --no-builtin-rules --quest
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
 
-# Make data base, printed on Thu Apr 20 20:36:07 2023
+# Make data base, printed on Sun Apr 23 19:37:02 2023
 
 # Variables
 
-# environment
-FPS_BROWSER_APP_PROFILE_STRING = Internet Explorer
 # environment
 SYSTEMDRIVE = C:
 # environment
@@ -43,9 +41,7 @@ MAKE_COMMAND := make.exe
 # environment
 DOKANLIBRARY1_LIBRARYPATH_X64 = C:\Program Files\Dokan\Dokan Library-1.5.1\lib\
 # environment
-CHROME_CRASHPAD_PIPE_NAME = \\.\pipe\LOCAL\crashpad_11804_UPEXCPSPIZFWMUJY
-# environment
-FPS_BROWSER_USER_PROFILE_STRING = Default
+CHROME_CRASHPAD_PIPE_NAME = \\.\pipe\LOCAL\crashpad_11788_QUIEFRHOYPQRRZCI
 # environment
 VSCODE_HANDLES_UNCAUGHT_ERRORS = true
 # default
@@ -95,7 +91,7 @@ MAKEFILE_LIST := Makefile
 # automatic
 @F = $(notdir $@)
 # environment
-VSCODE_PID = 11804
+VSCODE_PID = 11788
 # automatic
 ?D = $(patsubst %/,%,$(patsubst %\,%,$(dir $?)))
 # environment
@@ -183,7 +179,8 @@ HOMEDRIVE = C:
 # environment
 PROCESSOR_ARCHITECTURE = AMD64
 # environment
-VSCODE_AMD_ENTRYPOINT = vs/workbench/api/node/extensionHostProcess
+VSCODE_AMD_ENTRYPOINT = vs/ 
+workbench/api/node/extensionHostProcess
 # environment
 COMMONPROGRAMFILES(X86) = C:\Program Files (x86)\Common Files
 # environment
@@ -211,7 +208,7 @@ PROCESSOR_REVISION = 8e0c
 # environment
 PROCESSOR_IDENTIFIER = Intel64 Family 6 Model 142 Stepping 12, GenuineIntel
 # variable set hash-table stats:
-# Load=100/1024=10%, Rehash=0, Collisions=10/130=8%
+# Load=98/1024=10%, Rehash=0, Collisions=9/128=7%
 
 # Pattern-specific Variable Values
 
@@ -219,9 +216,9 @@ PROCESSOR_IDENTIFIER = Intel64 Family 6 Model 142 Stepping 12, GenuineIntel
 
 # Directories
 
-# . (key e:/programs/flappy-bird, mtime 1682002732): 16 files, no impossibilities.
+# . (key e:/programs/flappy-bird, mtime 1682258811): 17 files, no impossibilities.
 
-# 16 files, no impossibilities in 1 directories.
+# 17 files, no impossibilities in 1 directories.
 
 # Implicit Rules
 
@@ -232,7 +229,7 @@ PROCESSOR_IDENTIFIER = Intel64 Family 6 Model 142 Stepping 12, GenuineIntel
 # Not a target:
 Makefile:
 #  Implicit rule search has been done.
-#  Last modified 2023-04-20 20:20:44
+#  Last modified 2023-04-23 19:36:48
 #  File has been updated.
 #  Successfully updated.
 
@@ -268,7 +265,7 @@ all:
 # variable set hash-table stats:
 # Load=8/32=25%, Rehash=0, Collisions=1/11=9%
 #  recipe to execute (from 'Makefile', line 2):
-	g++ -Isrc/Include -Lsrc/lib -Isrc/res -mwindows icon.o -o main main.cpp -lmingw32 -lSDL2main -lSDL2 -lSDL2_image 
+	g++ -Isrc/Include -Lsrc/lib -Isrc/res icon.o -o main main.cpp -lmingw32 -lSDL2main -lSDL2 -lSDL2_image 
 
 # Not a target:
 .SUFFIXES:
@@ -284,12 +281,12 @@ all:
 
 # No general ('VPATH' variable) search path.
 
-# strcache buffers: 1 (0) / strings = 19 / storage = 174 B / avg = 9 B
-# current buf: size = 8162 B / used = 174 B / count = 19 / avg = 9 B
+# strcache buffers: 1 (0) / strings = 20 / storage = 179 B / avg = 8 B
+# current buf: size = 8162 B / used = 179 B / count = 20 / avg = 8 B
 
-# strcache performance: lookups = 26 / hit rate = 26%
+# strcache performance: lookups = 27 / hit rate = 25%
 # hash-table stats:
-# Load=19/8192=0%, Rehash=0, Collisions=0/26=0%
-# Finished Make data base on Thu Apr 20 20:36:07 2023
+# Load=20/8192=0%, Rehash=0, Collisions=0/27=0%
+# Finished Make data base on Sun Apr 23 19:37:03 2023
 
  
