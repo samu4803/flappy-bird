@@ -82,7 +82,7 @@ int birdAI::ai(SDL_Event event, int quit)
                 break;
             }
         }
-        if (y >= 750)
+        if (y >= 742)
         {
             d.Display(render, bird, bird_source, bird_destination);
             quit = 3;

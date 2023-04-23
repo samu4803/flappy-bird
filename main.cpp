@@ -125,13 +125,11 @@ int restart(SDL_Event event, int quit, SDL_Renderer *renderer)
             {
             case SDL_MOUSEBUTTONDOWN:
                 if (event.button.x > 276 && event.button.x < 357 + 100)
-
                     if (event.button.y > 357 && event.button.y < 357 + 100)
                     {
                         clicked = 2;
                         return clicked;
                     }
-
                 break;
             case SDL_QUIT:
                 clicked = 1;
@@ -145,5 +143,5 @@ int restart(SDL_Event event, int quit, SDL_Renderer *renderer)
 }
 /* 1= game quit
    2=play game
-   3=restart
+   3=restart button
  */
